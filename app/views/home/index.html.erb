@@ -1,0 +1,62 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Todos los Títulos</h1>
+
+<div class="p-1">
+  <select onchange="window.location=this.value">
+    <option value="" selected>Crear nuevo(a)</option>
+    <option value="<%=new_movie_path%>">Película</option>
+    <option value="<%=new_series_path%>">Serie</option>
+    <option value="<%=new_documentary_path%>">Documental</option>
+  </select>
+</div>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Director</th>
+      <th scope="col">Sinopsis</th>
+      <th scope="col">Tipo</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @i = 0 %>
+    <% @movies.each do |movie| %>
+    <tr>
+      <th scope="row"><%= @i = @i+1 %></th>
+      <td><%= movie.Name %></td>
+      <td><%= movie.Director %></td>
+      <td><%= movie.Synopsis.byteslice(0, 60) %>...</td>
+      <td>Película</td>
+      <td><%= link_to "Ver", movie, :class => "btn btn-primary" %></td>
+    </tr>
+    <% end %>
+
+    <% @series.each do |serie| %>
+    <tr>
+        <th scope="row"><%= @i = @i+1 %></th>
+        <td><%= serie.Name %></td>
+        <td><%= serie.Director %></td>
+        <td><%= serie.Synopsis.byteslice(0, 60) %>...</td>
+        <td>Serie</td>
+        <td><%= link_to "Ver", serie, :class => "btn btn-primary" %></td>
+    </tr>
+    <% end %>
+
+    <% @documentaries.each do |documentary| %>
+    <tr>
+        <th scope="row"><%= @i = @i+1 %></th>
+        <td><%= documentary.Name %></td>
+        <td><%= documentary.Director %></td>
+        <td><%= documentary.Synopsis.byteslice(0, 60) %>...</td>
+        <td>Documental</td>
+        <td><%= link_to "Ver", documentary, :class => "btn btn-primary" %></td>
+    </tr>
+    <% end %>
+
+
+  </tbody>
+</table>

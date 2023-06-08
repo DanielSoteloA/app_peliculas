@@ -1,0 +1,12 @@
+<div class="px-3">
+  <h3>Editando Serie</h3>
+</div>
+
+<%= render "form", series: @series %>
+
+<br>
+
+<div class="px-3">
+  <%= link_to "Ver #{@series.Name}", @series, class: "btn btn-success" %> 
+  <%= link_to "Volver al Listado", root_path, class: "btn btn-secondary" %>
+</div>

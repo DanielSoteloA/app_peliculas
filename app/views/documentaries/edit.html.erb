@@ -1,0 +1,12 @@
+<div class="px-3">
+  <h3>Editando Documental</h3>
+</div>
+
+<%= render "form", documentary: @documentary %>
+
+<br>
+
+<div class="px-3">
+  <%= link_to "Ver #{@documentary.Name}", @documentary, class: "btn btn-success" %> 
+  <%= link_to "Volver al Listado", root_path, class: "btn btn-secondary" %>
+</div>

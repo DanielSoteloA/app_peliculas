@@ -1,0 +1,11 @@
+<div id="<%= dom_id series %>" class="card" style="width: 28rem;">
+  <div class="card-body">
+    <h5 class="card-title">Serie</h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= series.Name %></h6>
+    <p class="card-text"><%= @series.Synopsis %></p>
+    <h5 class="card-title">Director</h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= series.Director %></h6>
+    <%= link_to "Editar", edit_series_path(@series), :class => "btn btn-primary" %>
+    <%= link_to "Volver al Listado", root_path, :class => "btn btn-secondary" %>
+  </div>
+</div>

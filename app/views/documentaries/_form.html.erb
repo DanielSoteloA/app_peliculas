@@ -1,0 +1,32 @@
+<%= form_with(model: documentary) do |form| %>
+  <% if documentary.errors.any? %>
+    <div style="color: red" class="form-group">
+      <h2><%= pluralize(documentary.errors.count, "error") %> prohibited this documentary from being saved:</h2>
+
+      <ul>
+        <% documentary.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group col-md-6">
+    <%= form.label :Nombre, style: "display: block" %>
+    <%= form.text_field :Name, class: "form-control" %>
+  </div>
+
+  <div class="form-group col-md-6">
+    <%= form.label :Sinopsis, style: "display: block" %>
+    <%= form.text_area :Synopsis, class: "form-control" %>
+  </div>
+
+  <div class="form-group col-md-6">
+    <%= form.label :Director, style: "display: block" %>
+    <%= form.text_field :Director, class: "form-control" %>
+  </div>
+
+  <div class="form-group col-md-6">
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+<% end %>
